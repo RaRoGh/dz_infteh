@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MatrixCalc</class>
+ <widget class="QMainWindow" name="MatrixCalc">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="matA">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>261</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>2</width>
+      <height>2</height>
+     </size>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>2</width>
+      <height>2</height>
+     </size>
+    </property>
+    <property name="baseSize">
+     <size>
+      <width>2</width>
+      <height>2</height>
+     </size>
+    </property>
+    <property name="rowCount">
+     <number>2</number>
+    </property>
+    <property name="columnCount">
+     <number>2</number>
+    </property>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>43</number>
+    </attribute>
+    <attribute name="verticalHeaderMinimumSectionSize">
+     <number>30</number>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>30</number>
+    </attribute>
+    <row/>
+    <row/>
+    <column/>
+    <column/>
+   </widget>
+   <widget class="QTableWidget" name="matB">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>20</y>
+      <width>301</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>2</width>
+      <height>2</height>
+     </size>
+    </property>
+    <property name="rowCount">
+     <number>2</number>
+    </property>
+    <property name="columnCount">
+     <number>2</number>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderMinimumSectionSize">
+     <number>43</number>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>43</number>
+    </attribute>
+    <attribute name="horizontalHeaderHighlightSections">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderMinimumSectionSize">
+     <number>30</number>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>30</number>
+    </attribute>
+    <row/>
+    <row/>
+    <column/>
+    <column/>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Aclear">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>240</y>
+      <width>71</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_upSizeA">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>240</y>
+      <width>31</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_downSizeA">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>240</y>
+      <width>31</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_plus">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>70</y>
+      <width>83</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A + B</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_minus">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>130</y>
+      <width>83</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A - B</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_mult">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>190</y>
+      <width>83</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A * B</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_opred">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>280</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>а.Определитель</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_trans">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>280</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>b.Транспонировать</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_revmat">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>320</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>h.Обратная матрица</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_algebrdop">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>320</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>f.Алгебраическое доп</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_prisoedmat">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>360</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>g.Присоединенная матрица</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_minorel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>c.Матрица минора</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_opredminora">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>400</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>d.Минор элемента</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_8">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>400</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>e. Матрицы миноров</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="matAns">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>310</y>
+      <width>331</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>2</width>
+      <height>2</height>
+     </size>
+    </property>
+    <property name="rowCount">
+     <number>2</number>
+    </property>
+    <property name="columnCount">
+     <number>2</number>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderMinimumSectionSize">
+     <number>43</number>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>43</number>
+    </attribute>
+    <attribute name="horizontalHeaderHighlightSections">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderMinimumSectionSize">
+     <number>30</number>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>30</number>
+    </attribute>
+    <row/>
+    <row/>
+    <column/>
+    <column/>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>280</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Полученная матрица:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_multNum">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>440</y>
+      <width>351</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Умножение на число</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Aclear_2">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>570</y>
+      <width>71</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>30</y>
+      <width>43</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>10</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Число для умножения: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>540</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Определитель матрицы:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="detL">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>539</y>
+      <width>63</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
