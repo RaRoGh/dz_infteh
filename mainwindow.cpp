@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButton->setVisible(false);
 
 }
-
+// test commit !!!
 double firstNum, secondNum;
 
 
