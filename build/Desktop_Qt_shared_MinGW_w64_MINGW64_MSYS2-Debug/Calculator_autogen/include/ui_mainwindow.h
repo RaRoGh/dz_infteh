@@ -50,6 +50,11 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_10;
     QPushButton *pushButton_matrix;
+    QPushButton *pushButton_MS;
+    QPushButton *pushButton_MC;
+    QPushButton *pushButton_MR;
+    QPushButton *pushButton_MPlus;
+    QPushButton *pushButton_MMinus;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -185,6 +190,21 @@ public:
         pushButton_matrix = new QPushButton(centralwidget);
         pushButton_matrix->setObjectName("pushButton_matrix");
         pushButton_matrix->setGeometry(QRect(10, 10, 83, 31));
+        pushButton_MS = new QPushButton(centralwidget);
+        pushButton_MS->setObjectName("pushButton_MS");
+        pushButton_MS->setGeometry(QRect(110, 10, 41, 29));
+        pushButton_MC = new QPushButton(centralwidget);
+        pushButton_MC->setObjectName("pushButton_MC");
+        pushButton_MC->setGeometry(QRect(160, 10, 41, 29));
+        pushButton_MR = new QPushButton(centralwidget);
+        pushButton_MR->setObjectName("pushButton_MR");
+        pushButton_MR->setGeometry(QRect(210, 10, 41, 29));
+        pushButton_MPlus = new QPushButton(centralwidget);
+        pushButton_MPlus->setObjectName("pushButton_MPlus");
+        pushButton_MPlus->setGeometry(QRect(260, 10, 41, 29));
+        pushButton_MMinus = new QPushButton(centralwidget);
+        pushButton_MMinus->setObjectName("pushButton_MMinus");
+        pushButton_MMinus->setGeometry(QRect(310, 10, 41, 29));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -220,6 +240,11 @@ public:
         pushButton->setText(QCoreApplication::translate("MainWindow", "Clear History", nullptr));
         pushButton_10->setText(QCoreApplication::translate("MainWindow", "\342\237\262", nullptr));
         pushButton_matrix->setText(QCoreApplication::translate("MainWindow", "Matrix Calc", nullptr));
+        pushButton_MS->setText(QCoreApplication::translate("MainWindow", "MS", nullptr));
+        pushButton_MC->setText(QCoreApplication::translate("MainWindow", "MC", nullptr));
+        pushButton_MR->setText(QCoreApplication::translate("MainWindow", "MR", nullptr));
+        pushButton_MPlus->setText(QCoreApplication::translate("MainWindow", "M+", nullptr));
+        pushButton_MMinus->setText(QCoreApplication::translate("MainWindow", "M-", nullptr));
     } // retranslateUi
 
 };

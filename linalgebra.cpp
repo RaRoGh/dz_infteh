@@ -61,20 +61,22 @@ void LinAlgebra::transposeMat(QTableWidget *sourceMat, QTableWidget *targetMat)
         }
     }
 }
-QTableWidget LinAlgebra::matrixMinor(QTableWidget *sourceMat, int row, int col)
+QTableWidget* LinAlgebra::matrixMinor(QTableWidget *sourceMat, int row, int col)
 {
     int rows = sourceMat->rowCount();
     int cols = sourceMat->columnCount();
 
-    QTableWidget minor(rows-1, cols-1);
-    for (int i = 0, minorRow = 0; i < rows; ++i) {
-        if (i == row) continue; // Пропускаем строку, содержащую элемент
+    // Создаем новую матрицу-минор
+    QTableWidget *minor = new QTableWidget(rows - 1, cols - 1);
 
-        for (int j = 0, minorCol = 0; j < cols; ++j) {
-            if (j == col) continue; // Пропускаем столбец, содержащий элемент
+    for (int i = 0, minorRow=0; i < rows; ++i) {
+        if (i == row) continue;
+
+        for (int j = 0, minorCol =0; j < cols; ++j) {
+            if (j == col) continue;
 
             // Копируем элемент в минор
-            minor.setI = table->item(i, j)->text().toDouble();
+            minor->setItem(minorRow, minorCol, new QTableWidgetItem(sourceMat->item(i, j)->text()));
             minorCol++;
         }
         minorRow++;
@@ -82,3 +84,4 @@ QTableWidget LinAlgebra::matrixMinor(QTableWidget *sourceMat, int row, int col)
 
     return minor;
 }
+

@@ -213,3 +213,48 @@ void MainWindow::on_listWidget_doubleClicked(const QModelIndex &index)
     ui->label->setText(index.data().toString());
 }
 
+
+void MainWindow::on_pushButton_MS_clicked()
+{
+    bool ok;
+    double value = ui->lineEdit->text().toDouble(&ok);
+    if (ok) {
+        memory = value;
+        ui->lineEdit->clear();
+    }
+}
+
+
+void MainWindow::on_pushButton_MC_clicked()
+{
+    memory = 0.0;
+}
+
+
+void MainWindow::on_pushButton_MR_clicked()
+{
+    ui->lineEdit->setText(QString::number(memory, 'g', 15));
+}
+
+
+void MainWindow::on_pushButton_MPlus_clicked()
+{
+    bool ok;
+    double value = ui->lineEdit->text().toDouble(&ok);
+    if (ok) {
+        memory += value;
+        ui->lineEdit->clear();
+    }
+}
+
+
+void MainWindow::on_pushButton_MMinus_clicked()
+{
+    bool ok;
+    double value = ui->lineEdit->text().toDouble(&ok);
+    if (ok) {
+        memory -= value;
+        ui->lineEdit->clear();
+    }
+}
+

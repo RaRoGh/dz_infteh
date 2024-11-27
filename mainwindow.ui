@@ -520,6 +520,71 @@
      <string>Matrix Calc</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_MS">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>10</y>
+      <width>41</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MS</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_MC">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>10</y>
+      <width>41</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MC</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_MR">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>10</y>
+      <width>41</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MR</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_MPlus">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>10</y>
+      <width>41</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>M+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_MMinus">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>10</y>
+      <width>41</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>M-</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

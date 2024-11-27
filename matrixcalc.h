@@ -32,6 +32,12 @@ private slots:
     void on_pushButton_opred_clicked();
     void on_pushButton_trans_clicked();
     void on_pushButton_minorel_clicked();
+    void on_pushButton_opredminora_clicked();
+    void on_pushButton_8_clicked();
+    void on_pushButton_algebrdop_clicked();
+    void on_pushButton_prisoedmat_clicked();
+    void on_pushButton_revmat_clicked();
+    void on_pushButton_Aclear_2_clicked();
 };
 
 #endif // MATRIXCALC_H

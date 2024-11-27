@@ -4,6 +4,8 @@
 #include <QMessageBox>
 #include <QVBoxLayout>
 #include "parameterdialog.h"
+#include <QString>
+#include <math.h>
 
 MatrixCalc::MatrixCalc(QWidget *parent)
     : QMainWindow(parent)
@@ -127,13 +129,16 @@ void MatrixCalc::on_pushButton_trans_clicked()
 
 void MatrixCalc::on_pushButton_minorel_clicked()
 {
+    int row, col;
     int rowM = ui->matA->rowCount();
     int colM = ui->matA->columnCount();
+    ui->matAns->setRowCount(rowM - 1);
+    ui->matAns->setRowCount(colM - 1);
     while (true)
     {
         ParameterDialog dialog1("Номер строки элемента", rowM, colM);
         if (dialog1.exec() == QDialog::Accepted) {
-            int row = (dialog1.getParameter()).toInt();
+            row = (dialog1.getParameter()).toInt();
         }
         break;
     }
@@ -141,13 +146,155 @@ void MatrixCalc::on_pushButton_minorel_clicked()
     {
         ParameterDialog dialog2("Номер столбца элемента", rowM, colM);
         if (dialog2.exec() == QDialog::Accepted) {
-            int col = (dialog2.getParameter()).toInt();
+            col = (dialog2.getParameter()).toInt();
         }
         break;
     }
-    ui->matAns->setRowCount(rowM - 1);
-    ui->matAns->setRowCount(colM - 1);
+    QTableWidget *minorMatrix = linA.matrixMinor(ui->matA, row, col);
+
+    for (int row = 0; row < minorMatrix->rowCount(); ++row) {
+        for (int col = 0; col < minorMatrix->columnCount(); ++col) {
+            ui->matAns->setItem(row, col, new QTableWidgetItem(minorMatrix->item(row, col)->text()));
+        }
+    }
+
+}
 
 
+void MatrixCalc::on_pushButton_opredminora_clicked()
+{
+    int row, col;
+    int rowM = ui->matA->rowCount();
+    int colM = ui->matA->columnCount();
+    ui->matAns->setRowCount(rowM);
+    ui->matAns->setRowCount(colM);
+    while (true)
+    {
+        ParameterDialog dialog1("Номер строки элемента", rowM, colM);
+        if (dialog1.exec() == QDialog::Accepted) {
+            row = (dialog1.getParameter()).toInt();
+        }
+        break;
+    }
+    while (true)
+    {
+        ParameterDialog dialog2("Номер столбца элемента", rowM, colM);
+        if (dialog2.exec() == QDialog::Accepted) {
+            col = (dialog2.getParameter()).toInt();
+        }
+        break;
+    }
+    QTableWidget *minorMatrix = linA.matrixMinor(ui->matA, row-1, col-1);
+    double det = linA.calculateDet(minorMatrix);
+
+    ui->matAns->setItem(row-1, col-1, new QTableWidgetItem(QString::number(det, 'g', 15)));
+
+}
+
+
+void MatrixCalc::on_pushButton_8_clicked()
+{
+    int rowM = ui->matA->rowCount();
+    int colM = ui->matA->columnCount();
+    for(int i = 0 ; i < rowM; ++i)
+    {
+        for(int j = 0; j < colM; ++j)
+        {
+            QTableWidget *minorMatrix = linA.matrixMinor(ui->matA, i, j);
+            double det = linA.calculateDet(minorMatrix);
+            ui->matAns->setItem(i, j, new QTableWidgetItem(QString::number(det, 'g', 15)));
+        }
+    }
+}
+
+
+void MatrixCalc::on_pushButton_algebrdop_clicked()
+{
+    int row, col;
+    int rowM = ui->matA->rowCount();
+    int colM = ui->matA->columnCount();
+    ui->matAns->setRowCount(rowM);
+    ui->matAns->setRowCount(colM);
+    while (true)
+    {
+        ParameterDialog dialog1("Номер строки элемента", rowM, colM);
+        if (dialog1.exec() == QDialog::Accepted) {
+            row = (dialog1.getParameter()).toInt();
+        }
+        break;
+    }
+    while (true)
+    {
+        ParameterDialog dialog2("Номер столбца элемента", rowM, colM);
+        if (dialog2.exec() == QDialog::Accepted) {
+            col = (dialog2.getParameter()).toInt();
+        }
+        break;
+    }
+    QTableWidget *minorMatrix = linA.matrixMinor(ui->matA, row-1, col-1);
+    double det = pow((-1), (row+col)) * (linA.calculateDet(minorMatrix));
+
+
+    ui->matAns->setItem(row-1, col-1, new QTableWidgetItem(QString::number(det, 'g', 15)));
+}
+
+
+void MatrixCalc::on_pushButton_prisoedmat_clicked()
+{
+    int rowM = ui->matA->rowCount();
+    int colM = ui->matA->columnCount();
+    for(int i = 0 ; i < rowM; ++i)
+    {
+        for(int j = 0; j < colM; ++j)
+        {
+            QTableWidget *minorMatrix = linA.matrixMinor(ui->matA, i, j);
+            double det =pow((-1), (i+j)) * (linA.calculateDet(minorMatrix));
+            ui->matAns->setItem(i, j, new QTableWidgetItem(QString::number(det, 'g', 15)));
+        }
+    }
+}
+
+
+void MatrixCalc::on_pushButton_revmat_clicked()
+{
+    int rowM = ui->matA->rowCount();
+    int colM = ui->matA->columnCount();
+    double detA=0;
+    detA = linA.calculateDet(ui->matA);
+    if(detA != 0)
+    {
+        double element = 0;
+
+        for(int i = 0 ; i < rowM; ++i)
+        {
+            for(int j = 0; j < colM; ++j)
+            {
+                QTableWidget *minorMatrix = linA.matrixMinor(ui->matA, i, j);
+                double det =pow((-1), (i+j)) * (linA.calculateDet(minorMatrix));
+                ui->matAns->setItem(i, j, new QTableWidgetItem(QString::number(det, 'g', 15)));
+            }
+        }
+
+        linA.transposeMat(ui->matAns, ui->matB);
+        for(int i = 0; i<rowM; ++i)
+        {
+            for(int j = 0; j < colM; ++j)
+            {
+                element = (1/detA) * (ui->matB->item(i, j)->text().toDouble());
+                ui->matAns->setItem(i, j, new QTableWidgetItem(QString::number(element, 'g', 15)));
+            }
+        }
+        ui->matB->clear();
+    }
+    else
+    {
+        QMessageBox::warning(this, "Ошибка", "Определитель матрицы равен 0. Введите другую матрицу");
+    }
+}
+
+
+void MatrixCalc::on_pushButton_Aclear_2_clicked()
+{
+    ui->matAns->clear();
 }
 

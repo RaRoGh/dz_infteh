@@ -24,6 +24,7 @@ private:
     void calculate(QString op);
     void addToHistory(QString op, double firstNum, double secondNum);
     MatrixCalc *mxCalc;
+    double memory;
 
 private slots:
     void btn_press();
@@ -38,5 +39,10 @@ private slots:
     void on_pushButton_10_clicked();
     void on_pushButton_matrix_clicked();
     void on_listWidget_doubleClicked(const QModelIndex &index);
+    void on_pushButton_MS_clicked();
+    void on_pushButton_MC_clicked();
+    void on_pushButton_MR_clicked();
+    void on_pushButton_MPlus_clicked();
+    void on_pushButton_MMinus_clicked();
 };
 #endif // MAINWINDOW_H
